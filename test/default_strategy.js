@@ -3,8 +3,8 @@ var should = require('should')
 
 describe('Default Strategy with testing store', function(){
   //arrange
-  var testStore = function(flag, account, user, cb){
-    cb(null, flag === 'SOMEFLAG');
+  var testStore = function(flags, account, user, cb){
+    cb(null, flags === 'SOMEFLAG');
   };
   var strategy = Strategy({ store: testStore });
 
@@ -31,10 +31,10 @@ describe('Default Strategy with testing store', function(){
   //arrange
   var passedUser = null;
   var passedAccount = null;
-  var testStore = function(flag, account, user, cb){
+  var testStore = function(flags, account, user, cb){
     passedUser = user;
     passedAccount = account;
-    cb(null, flag === 'SOMEFLAG');
+    cb(null, flags === 'SOMEFLAG');
   };
   var userIdentifier = function(req, cb){
     cb(null, 'troy');

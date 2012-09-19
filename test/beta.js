@@ -3,8 +3,8 @@ var should = require('should')
 
 describe('Beta with custom strategy', function(){
   //arrange
-  var strategy = function(flag, cb){
-    var on = flag === 'SOMEFLAG';
+  var strategy = function(flags, cb){
+    var on = flags === 'SOMEFLAG';
     cb(null, on);
   };
   var beta = new Beta({strategy: strategy});
@@ -31,7 +31,7 @@ describe('Beta with custom strategy', function(){
 describe('Beta middleware', function(){
   //arrange
   var requestReceived = false;
-  var strategy = function(flag, req, cb){
+  var strategy = function(flags, req, cb){
     if(req) requestReceived = true;
     cb();
   };

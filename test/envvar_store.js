@@ -3,6 +3,8 @@ var should = require('should')
 
 describe('EnvVarStore', function(){
   //arrange
+  process.env.BETAFLAG_SOMEFLAG = '*';
+  process.env.BETAFLAG_SOMEFLAG2 = 'false';
   var store = Store({});
   var account = null;
   var user = null;
