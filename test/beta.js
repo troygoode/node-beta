@@ -7,7 +7,7 @@ describe('Beta with custom strategy', function(){
     var on = flag === 'someflag';
     cb(null, on);
   };
-  var beta = new Beta(strategy);
+  var beta = new Beta({strategy: strategy});
 
   it('Recognizes "on" flags as on.', function(done){
     //act
