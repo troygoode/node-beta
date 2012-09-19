@@ -1,8 +1,10 @@
 var should = require('should')
-  , store = require('../lib/envvar_store');
+  , Store = require('../lib/envvar_store');
 
 describe('EnvVarStore', function(){
   //arrange
+  var store = Store({});
+
   it('recognizes "on" flags as on.', function(done){
     //act
     store('SOMEFLAG', function(err, on){
