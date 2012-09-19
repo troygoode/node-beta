@@ -26,4 +26,14 @@ describe('EnvVarStore', function(){
       done();
     });
   });
+
+  it('supports lookups on an array of flags.', function(done){
+    //act
+    store(['SOMEFLAG', 'SOMEFLAG2'], account, user, function(err, flags){
+      //assert
+      flags.SOMEFLAG.should.equal(true);
+      flags.SOMEFLAG2.should.equal(false);
+      done();
+    });
+  });
 });
