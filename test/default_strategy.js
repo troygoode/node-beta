@@ -3,7 +3,7 @@ var should = require('should')
 
 describe('Default Strategy with testing store', function(){
   //arrange
-  var testStore = function(flag, cb){
+  var testStore = function(flag, account, user, cb){
     cb(null, flag === 'SOMEFLAG');
   };
   var strategy = Strategy({ store: testStore });

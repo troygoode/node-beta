@@ -4,10 +4,12 @@ var should = require('should')
 describe('EnvVarStore', function(){
   //arrange
   var store = Store({});
+  var account = null;
+  var user = null;
 
   it('recognizes "on" flags as on.', function(done){
     //act
-    store('SOMEFLAG', function(err, on){
+    store('SOMEFLAG', account, user, function(err, on){
       //assert
       on.should.equal(true);
       done();
@@ -16,7 +18,7 @@ describe('EnvVarStore', function(){
 
   it('recognizes unknown flags as off.', function(done){
     //act
-    store('SOMEFLAG2', function(err, on){
+    store('SOMEFLAG2', account, user, function(err, on){
       //assert
       on.should.equal(false);
       done();
