@@ -5,6 +5,11 @@ describe('EnvVarStore', function(){
   //arrange
   process.env.BETAFLAG_SOMEFLAG = '*';
   process.env.BETAFLAG_SOMEFLAG2 = 'false';
+  process.env.BETAFLAG_SOMEFLAG3 = 'troy';
+  process.env.BETAFLAG_SOMEFLAG4 = 'bob,troy';
+  process.env.BETAFLAG_SOMEFLAG5 = 'troy,bob';
+  process.env.BETAFLAG_SOMEFLAG6 = 'bob,troy,alice';
+  process.env.BETAFLAG_SOMEFLAG7 = 'bob,alice';
   var store = Store({});
   var account = null;
   var user = null;
@@ -33,6 +38,19 @@ describe('EnvVarStore', function(){
       //assert
       flags.SOMEFLAG.should.equal(true);
       flags.SOMEFLAG2.should.equal(false);
+      done();
+    });
+  });
+
+  it('Allows lookups by user.', function(done){
+    //act
+    store(['SOMEFLAG3', 'SOMEFLAG4', 'SOMEFLAG5', 'SOMEFLAG6', 'SOMEFLAG7'], account, 'troy', function(err, flags){
+      //assert
+      flags.SOMEFLAG3.should.equal(true);
+      flags.SOMEFLAG4.should.equal(true);
+      flags.SOMEFLAG5.should.equal(true);
+      flags.SOMEFLAG6.should.equal(true);
+      flags.SOMEFLAG7.should.equal(false);
       done();
     });
   });
