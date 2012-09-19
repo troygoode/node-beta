@@ -9,7 +9,7 @@ describe('Beta with custom strategy', function(){
   };
   var beta = new Beta({strategy: strategy});
 
-  it('Recognizes "on" flags as on.', function(done){
+  it('recognizes "on" flags as on.', function(done){
     //act
     beta.check('someflag', function(err, on){
       //assert
@@ -18,7 +18,7 @@ describe('Beta with custom strategy', function(){
     });
   });
 
-  it('Recognizes unknown flags as off.', function(done){
+  it('recognizes unknown flags as off.', function(done){
     //act
     beta.check('someflag2', function(err, on){
       //assert
@@ -32,7 +32,7 @@ describe('Beta with default strategy', function(){
   //arrange
   var beta = new Beta();
 
-  it('Recognizes unknown flags as off.', function(done){
+  it('recognizes unknown flags as off.', function(done){
     //act
     beta.check('someflag', function(err, on){
       //assert
