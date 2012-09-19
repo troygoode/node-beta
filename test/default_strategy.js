@@ -26,3 +26,44 @@ describe('Default Strategy with testing store', function(){
     });
   });
 });
+
+describe('Default Strategy with testing store', function(){
+  //arrange
+  var passedUser = null;
+  var passedAccount = null;
+  var testStore = function(flag, account, user, cb){
+    passedUser = user;
+    passedAccount = account;
+    cb(null, flag === 'SOMEFLAG');
+  };
+  var userIdentifier = function(req, cb){
+    cb(null, 'troy');
+  };
+  var accountIdentifier = function(req, cb){
+    cb(null, 'acme');
+  };
+  var strategy = Strategy({
+    store: testStore,
+    userIdentifier: userIdentifier,
+    accountIdentifier: accountIdentifier
+  });
+  var req = {};
+
+  it('passes user into store when identified.', function(done){
+    //act
+    strategy('SOMEFLAG2', req, function(err, on){
+      //assert
+      passedUser.should.equal('troy');
+      done();
+    });
+  });
+
+  it('passes account into store when identified.', function(done){
+    //act
+    strategy('SOMEFLAG2', req, function(err, on){
+      //assert
+      passedAccount.should.equal('acme');
+      done();
+    });
+  });
+});
