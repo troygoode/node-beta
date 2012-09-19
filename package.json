@@ -1,0 +1,38 @@
+{
+  "author": "Troy Goode <troygoode@gmail.com> (https://github.com/troygoode/)",
+  "name": "beta",
+  "version": "0.0.1",
+  "description": "node.js package for checking beta flags",
+  "keywords": ["beta", "flags"],
+  "homepage": "https://github.com/troygoode/node-beta/",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/troygoode/node-beta.git"
+  },
+  "contributors": [
+    {
+      "name": "Troy Goode",
+      "email": "troygoode@gmail.com",
+      "web": "https://github.com/troygoode/"
+    }
+  ],
+  "licenses": [
+    {"type": "MIT", "url": "http://www.opensource.org/licenses/mit-license.php"}
+  ],
+  "bugs": {
+    "url": "https://github.com/troygoode/node-beta/issues"
+  },
+  "main": "./lib/index.js",
+  "directories": {
+    "lib": "./lib"
+  },
+  "engines": {
+    "node": ">=0.4.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  },
+  "scripts": {}
+}
