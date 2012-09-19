@@ -28,7 +28,7 @@ describe('Beta with custom strategy', function(){
   });
 });
 
-describe('Beta with default (env var) strategy', function(){
+describe('Beta with default strategy', function(){
   //arrange
   var beta = new Beta();
 
