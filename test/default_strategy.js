@@ -4,13 +4,13 @@ var should = require('should')
 describe('Default Strategy with testing store', function(){
   //arrange
   var testStore = function(flag, cb){
-    cb(null, flag === 'someflag');
+    cb(null, flag === 'SOMEFLAG');
   };
   var strategy = Strategy({ store: testStore });
 
   it('recognizes "on" flags as on.', function(done){
     //act
-    strategy('someflag', function(err, on){
+    strategy('SOMEFLAG', function(err, on){
       //assert
       on.should.equal(true);
       done();
@@ -19,7 +19,7 @@ describe('Default Strategy with testing store', function(){
 
   it('recognizes unknown flags as off.', function(done){
     //act
-    strategy('someflag2', function(err, on){
+    strategy('SOMEFLAG2', function(err, on){
       //assert
       on.should.equal(false);
       done();

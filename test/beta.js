@@ -4,14 +4,14 @@ var should = require('should')
 describe('Beta with custom strategy', function(){
   //arrange
   var strategy = function(flag, cb){
-    var on = flag === 'someflag';
+    var on = flag === 'SOMEFLAG';
     cb(null, on);
   };
   var beta = new Beta({strategy: strategy});
 
   it('recognizes "on" flags as on.', function(done){
     //act
-    beta.check('someflag', function(err, on){
+    beta.check('SOMEFLAG', function(err, on){
       //assert
       on.should.equal(true);
       done();
@@ -20,7 +20,7 @@ describe('Beta with custom strategy', function(){
 
   it('recognizes unknown flags as off.', function(done){
     //act
-    beta.check('someflag2', function(err, on){
+    beta.check('SOMEFLAG2', function(err, on){
       //assert
       on.should.equal(false);
       done();
@@ -34,7 +34,7 @@ describe('Beta with default strategy', function(){
 
   it('recognizes unknown flags as off.', function(done){
     //act
-    beta.check('someflag', function(err, on){
+    beta.check('SOMEFLAG2', function(err, on){
       //assert
       on.should.equal(false);
       done();
