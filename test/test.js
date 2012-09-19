@@ -1,12 +1,15 @@
 var should = require('should')
   , Beta = require('../lib');
 
-describe('Beta', function(){
+describe('Beta with custom strategy', function(){
+  //arrange
+  var strategy = function(flag, cb){
+    var on = flag === 'someflag';
+    cb(null, on);
+  };
+  var beta = new Beta(strategy);
 
-  it('Works', function(done){
-    //arrange
-    var beta = new Beta();
-
+  it('Recognizes "on" flags as on.', function(done){
     //act
     beta.check('someflag', function(err, on){
       //assert
@@ -15,4 +18,26 @@ describe('Beta', function(){
     });
   });
 
+  it('Recognizes unknown flags as off.', function(done){
+    //act
+    beta.check('someflag2', function(err, on){
+      //assert
+      on.should.equal(false);
+      done();
+    });
+  });
+});
+
+describe('Beta with default (env var) strategy', function(){
+  //arrange
+  var beta = new Beta();
+
+  it('Recognizes unknown flags as off.', function(done){
+    //act
+    beta.check('someflag', function(err, on){
+      //assert
+      on.should.equal(false);
+      done();
+    });
+  });
 });
