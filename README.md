@@ -3,6 +3,14 @@ node-beta
 
 Beta flags for node.js &amp; express.
 
+### Installation (via [npm](https://npmjs.org/package/beta))
+
+```bash
+$ npm install beta
+```
+
+### Usage
+
 ```javascript
 var Beta = require('beta');
 var beta = new Beta({
