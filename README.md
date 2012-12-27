@@ -3,6 +3,8 @@ node-beta
 
 Beta flags for node.js &amp; express.
 
+[![build status](https://secure.travis-ci.org/TroyGoode/node-beta.png)](http://travis-ci.org/TroyGoode/node-beta)
+
 ### Installation (via [npm](https://npmjs.org/package/beta))
 
 ```bash

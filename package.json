@@ -34,5 +34,7 @@
     "mocha": "*",
     "should": "*"
   },
-  "scripts": {}
+  "scripts": {
+    "test": "mocha"
+  }
 }
