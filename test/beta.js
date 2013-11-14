@@ -42,7 +42,7 @@ describe('Beta middleware', function(){
   beta.middleware(req, null, function(){
     it('should add a function to the request object.', function(done){
       //assert
-      req.beta.should.be.a('function');
+      req.beta.should.be.type('function');
       done();
     });
 
