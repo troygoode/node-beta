@@ -5,7 +5,7 @@ Beta flags for node.js &amp; express.
 
 [![NPM](https://nodei.co/npm/beta.png?downloads=true&stars=true)](https://nodei.co/npm/beta/)
 
-[![build status](https://secure.travis-ci.org/TroyGoode/node-beta.png)](http://travis-ci.org/TroyGoode/node-beta)
+[![build status](https://secure.travis-ci.org/troygoode/node-beta.png)](http://travis-ci.org/troygoode/node-beta)
 
 ### Installation (via [npm](https://npmjs.org/package/beta))
 
